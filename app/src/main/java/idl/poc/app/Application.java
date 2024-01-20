@@ -2,11 +2,13 @@ package idl.poc.app;
 
 import java.util.Arrays;
 
+import com.idl.poc.example.SecondMsg;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import com.idl.poc.example.Msg;
 
 @SpringBootApplication(scanBasePackages = {"idl.poc"})
 public class Application {
@@ -25,6 +27,10 @@ public class Application {
             for (String beanName : beanNames) {
                 System.out.println(beanName);
             }
+
+            SecondMsg msg = SecondMsg.newBuilder().setBlah(2).build();
+
+            System.out.println(msg.getBlah());
         };
     }
 

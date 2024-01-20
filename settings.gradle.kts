@@ -20,6 +20,7 @@ plugins {
 
 rootProject.name = "idl-poc"
 include(
-        "app",
-        "error"
+    "app",
+    "error",
+    "idl"
 )

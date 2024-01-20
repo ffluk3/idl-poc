@@ -11,4 +11,7 @@ plugins {
 dependencies {
     implementation("org.apache.commons:commons-text")
     implementation(project(":error"))
+
+    implementation(project(":idl"))
+    implementation(libs.google.protobuf)
 }

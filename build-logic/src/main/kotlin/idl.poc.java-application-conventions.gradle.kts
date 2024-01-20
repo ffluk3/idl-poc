@@ -48,3 +48,7 @@ jib {
         workingDirectory = "/simpleApp"
     }
 }
+
+configurations.implementation {
+    exclude(module="spring-boot-starter-logging")
+}
