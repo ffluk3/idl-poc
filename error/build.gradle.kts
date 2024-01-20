@@ -7,3 +7,7 @@
 plugins {
     id("idl.poc.java-library-conventions")
 }
+
+dependencies {
+    implementation(libs.springboot.web)
+}

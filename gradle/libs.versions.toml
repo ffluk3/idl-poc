@@ -1,0 +1,9 @@
+[versions]
+springboot = "2.7.8"
+
+[libraries]
+springboot-actuator = { module = "org.springframework.boot:spring-boot-starter-actuator", version.ref = "springboot" }
+springboot-web = { module = "org.springframework.boot:spring-boot-starter-web", version.ref = "springboot" }
+springboot-webservices = { module = "org.springframework.boot:spring-boot-starter-web-services", version.ref = "springboot" }
+springboot-configuration = { module = "org.springframework.boot:spring-boot-configuration-processor", version.ref = "springboot" }
+springboot-test = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "springboot" }

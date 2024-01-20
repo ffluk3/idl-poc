@@ -12,4 +12,23 @@ plugins {
 repositories {
     // Use the plugin portal to apply community plugins in convention plugins.
     gradlePluginPortal()
+    mavenCentral()
+}
+
+dependencies {
+    implementation("io.spring.dependency-management:io.spring.dependency-management.gradle.plugin:1.1.0")
+    implementation("org.springframework.boot:spring-boot-gradle-plugin:2.7.8")
+    implementation("com.google.cloud.tools.jib:com.google.cloud.tools.jib.gradle.plugin:3.1.4")
+}
+
+val JAVA_LANGUAGE_VERSION = 11
+
+java {
+    toolchain.languageVersion.set(JavaLanguageVersion.of(JAVA_LANGUAGE_VERSION))
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+    kotlinOptions {
+        jvmTarget = "$JAVA_LANGUAGE_VERSION"
+    }
 }
