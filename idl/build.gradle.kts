@@ -40,6 +40,9 @@ protobuf {
             it.plugins {
                 id("grpc") {}
             }
+            it.builtins {
+                id("python") {}
+            }
         }
     }
 }
