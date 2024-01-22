@@ -1,5 +1,7 @@
 [versions]
 springboot = "2.7.8"
+protobuf = "3.21.5"
+grpc = "1.61.0"
 
 [libraries]
 springboot-actuator = { module = "org.springframework.boot:spring-boot-starter-actuator", version.ref = "springboot" }
@@ -8,5 +10,8 @@ springboot-webservices = { module = "org.springframework.boot:spring-boot-starte
 springboot-configuration = { module = "org.springframework.boot:spring-boot-configuration-processor", version.ref = "springboot" }
 springboot-test = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "springboot" }
 
-google-protobuf = "com.google.protobuf:protobuf-java:3.21.5"
-google-protobuf-util = "com.google.protobuf:protobuf-java-util:3.21.5"
+google-protobuf = { module = "com.google.protobuf:protobuf-java", version.ref = "protobuf" }
+google-protobuf-util = { module = "com.google.protobuf:protobuf-java-util", version.ref = "protobuf" }
+grpc-protobuf = { module = "io.grpc:grpc-protobuf", version.ref = "grpc" }
+grpc-stub = { module = "io.grpc:grpc-stub", version.ref = "grpc" }
+grpc-okhttp = { module = "io.grpc:grpc-okhttp", version.ref = "grpc"}

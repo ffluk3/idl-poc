@@ -14,4 +14,5 @@ dependencies {
 
     implementation(project(":idl"))
     implementation(libs.google.protobuf)
+    implementation(libs.grpc.okhttp)
 }

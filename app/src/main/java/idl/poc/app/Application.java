@@ -1,14 +1,16 @@
 package idl.poc.app;
 
+import java.nio.channels.Channel;
 import java.util.Arrays;
 
-import com.idl.poc.example.SecondMsg;
+import com.idl.poc.example.SampleServiceGrpc;
+import io.grpc.ManagedChannelBuilder;
+import io.micrometer.core.instrument.Timer;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
-import com.idl.poc.example.Msg;
 
 @SpringBootApplication(scanBasePackages = {"idl.poc"})
 public class Application {
@@ -16,6 +18,7 @@ public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
+
     @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
@@ -28,9 +31,8 @@ public class Application {
                 System.out.println(beanName);
             }
 
-            SecondMsg msg = SecondMsg.newBuilder().setBlah(2).build();
 
-            System.out.println(msg.getBlah());
+            SampleServiceGrpc.SampleServiceBlockingStub sampleService = SampleServiceGrpc.newBlockingStub(ManagedChannelBuilder.forAddress("localhost", 6565).build());
         };
     }
 
