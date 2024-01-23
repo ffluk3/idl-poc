@@ -22,5 +22,6 @@ rootProject.name = "idl-poc"
 include(
     "app",
     "error",
-    "idl"
+    "idl",
+    "shared:buf-configuration"
 )

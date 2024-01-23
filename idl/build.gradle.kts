@@ -1,15 +1,19 @@
 import com.google.protobuf.gradle.*
 
 repositories {
+    mavenLocal()
     gradlePluginPortal()
 }
 
 plugins {
     `kotlin-dsl`
     id("com.google.protobuf") version "0.9.4"
+    id("build.buf") version "0.8.6"
 }
 
 dependencies {
+    buf("build.buf:shared-buf-configuration:0.1.0")
+
     implementation(libs.google.protobuf)
     implementation(libs.google.protobuf.util)
     implementation(libs.grpc.protobuf)

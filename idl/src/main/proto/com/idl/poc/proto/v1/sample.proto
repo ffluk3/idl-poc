@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package com.idl.poc.proto.v1;
+
+option java_multiple_files = true;
+option java_outer_classname = "OuterSample";
+option java_package = "com.idl.poc.example";
+
+message GetMsgRequest {
+  string foo = 1;
+}
+
+message GetMsgResponse {
+  bool bar = 1;
+}
+
+service SampleService {
+  rpc GetMsg(GetMsgRequest) returns (GetMsgResponse) {}
+}
